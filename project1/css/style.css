@@ -1,0 +1,14 @@
+
+#mainBox {
+    border: 1px solid red;
+
+    /*
+    border-width: 1px;
+    border-style: solid;
+    border-color: red;
+    */
+
+    width: 250px;
+    height: 350px;
+
+}
