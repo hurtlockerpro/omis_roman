@@ -9,6 +9,7 @@
 
 
 
+/*
 body{
     display: flex;
     justify-content: center;
@@ -16,6 +17,7 @@ body{
     min-height: 100vh;
     font-family: 'Roboto', sans-serif;
 }
+*/
 
 
 #mainBox {
@@ -91,3 +93,97 @@ body {
 */
 
 
+/* RIGHT COLUMN */
+
+.rightCol h1 {
+    color: white;
+    font-size: 28px;
+}
+
+/*
+https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors#syntax
+
+
+input[placeholder*="Your"][name^="u"]{
+    border-radius: 50%;
+}
+
+*/
+
+input[type="text"]{
+  /*  width: 100px;
+    height: 200px;
+    border-radius: 50%;
+    transform: rotate(15deg);
+
+
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid red;
+    */
+
+    height: 30px;
+    border-radius: 20px;
+
+}
+
+input[type="text"]::placeholder {
+    color: #015bea;
+}
+
+/* PSEUDO ELEMENTS + CLASSES */
+/* 
+.parent {
+    width: 200px;
+}
+
+.parent::before {
+    content: "before->";
+    border: 1px solid red;
+}
+.parent::after {
+    content: "<-after";
+    border: 1px solid red;
+}
+
+.parent::first-letter {
+    font-size: 48px;
+    color: green;
+}
+.parent::first-line {
+    background-color: yellow;
+}
+
+ul li:first-child {
+    font-weight: bold;
+}
+
+ul li:last-child {
+    color: blue;
+}
+
+ul li:nth-child(4) {
+    text-decoration: underline;
+}
+
+
+
+a:link { 
+    color: green;
+    text-decoration: none;
+} 
+a:visited{
+    color: red;
+}
+a:hover, .parent:hover {
+    cursor: crosshair;
+    text-decoration: underline;
+}
+
+a:active {
+    font-size: 40px;
+    color: #015bea;
+}
+ */
