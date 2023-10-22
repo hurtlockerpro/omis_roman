@@ -1,0 +1,18 @@
+
+.parent {
+    border: 1px solid red;
+    margin: 25px;
+    height: 1500px;
+    position: relative;
+}
+
+.box {
+    border: 1px solid green;
+    margin: 5px;
+}
+
+.box2 {
+    position: relative;
+    top: 15px;
+    right: 15px;
+}

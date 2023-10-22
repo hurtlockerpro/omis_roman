@@ -132,8 +132,8 @@
     <audio src=""></audio>
     -->
 
-    <i class="fa-solid fa-user"></i>
     
+
     <div id="mainBox"> <!-- parent -->
         <div class="leftCol"><!-- child -->
             <img src="https://picsum.photos/300/200?random=1" alt="Logo photo">
@@ -142,9 +142,20 @@
 
             <h1>Welcome!</h1>
             <form action="">
-                <input type="text" name="username" placeholder="Your name">
-                <input type="text" name="email" placeholder="Your email">
-                <input type="password" name="password" placeholder="Create password">
+                
+                <div class="txtInput">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" name="username" placeholder="Your name">
+                </div>
+
+                <div class="txtInput">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="text" name="email" placeholder="Your email">
+                </div>
+
+                <div class="txtInput inputPassword">
+                    <input type="password" name="password" placeholder="Create password">
+                </div>
 
                 <div class="progress">
                     <div>password strength</div>

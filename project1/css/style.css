@@ -5,11 +5,11 @@
 
 :root{
     --bg-color: #015bea;
+    --light-blue: #79b5fa;
+    --dark-blue: #182495;
 }
 
 
-
-/*
 body{
     display: flex;
     justify-content: center;
@@ -17,7 +17,7 @@ body{
     min-height: 100vh;
     font-family: 'Roboto', sans-serif;
 }
-*/
+
 
 
 #mainBox {
@@ -32,6 +32,8 @@ body{
     max-width: 600px;
     height: 350px;
     /*margin: auto;*/
+
+    box-shadow: 0px 0px 20px 0px rgba(139,143,214, 0.7);
 }
 
 #mainBox img {
@@ -110,7 +112,7 @@ input[placeholder*="Your"][name^="u"]{
 
 */
 
-input[type="text"]{
+input[type="text"], input[name="password"]{
   /*  width: 100px;
     height: 200px;
     border-radius: 50%;
@@ -126,12 +128,37 @@ input[type="text"]{
 
     height: 30px;
     border-radius: 20px;
+    border: 1px solid var(--dark-blue);
+    outline: none;
+    box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
+    padding-left: 35px;
+    width: 140px;
+}
+
+input[type="text"]::placeholder, input[name="password"]::placeholder {
+    color: var(--light-blue);
+}
+
+.txtInput {
+    position: relative;
+    margin-top: 15px;
 
 }
 
-input[type="text"]::placeholder {
-    color: #015bea;
+.fa-solid, .inputPassword::before {
+    color: var(--light-blue);
+    position: absolute;
+    left: 13px;
+    top: 9px;
 }
+
+/* PASSWORD INPUT */ 
+.inputPassword::before {
+    content: "\f023";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+
 
 /* PSEUDO ELEMENTS + CLASSES */
 /* 
@@ -187,3 +214,12 @@ a:active {
     color: #015bea;
 }
  */
+
+/* INPUT */
+
+/*
+.fa-user {
+    color: brown;
+    font-size: 48px;
+}*/
+
