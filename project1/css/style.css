@@ -21,7 +21,7 @@ body{
 
 
 #mainBox {
-    border: 1px solid red;
+    /* border: 1px solid red; */ 
 
     /*
     border-width: 1px;
@@ -60,8 +60,8 @@ body{
     flex-direction: column;
     justify-content: center;
 
-    padding-left: 6vw; /* adaptive */
-    padding-right: 6vw;
+    padding-left: 6%; /* adaptive */
+    padding-right: 6%;
     box-sizing: border-box;
 }
 
@@ -155,8 +155,8 @@ input[type="text"]::placeholder, input[name="password"]::placeholder {
 /* PASSWORD INPUT */ 
 .inputPassword::before {
     content: "\f023";
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
+   /* font-family: "Font Awesome 6 Free";
+    font-weight: 900;*/
 }
 
 
@@ -216,10 +216,71 @@ a:active {
  */
 
 /* INPUT */
-
 /*
 .fa-user {
     color: brown;
     font-size: 48px;
 }*/
 
+/* PASSWORD STRENGTH */
+
+.progress {
+    display: flex;
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* left column */
+.progress div:first-child {
+    width: 45%;
+    /* flex-grow: 2; */
+    font-size: 8px;
+    font-weight: normal;
+    text-transform: capitalize;
+}
+
+/* right column */
+.progress div:last-child {
+    width: 55%;
+    /* flex-grow: 3; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progress div:last-child > div {
+    border: 1px solid black;
+    width: 25%;
+    height: 5px;
+    border-radius: 3px;
+    background-color: var(--dark-blue);
+}
+
+.progress .active {
+    background-color: yellow !important;
+}
+
+/* BUTTON */ 
+
+input[value="create account"], input[value="sign in"] {
+    height: 35px;
+    border-radius: 20px;
+    text-transform: capitalize;
+    font-size: 10px;
+}
+
+input[value="create account"] {
+    border: 0;
+    width: 50%;
+    color: black;
+    background: rgb(254,194,1);
+    background: linear-gradient(90deg, rgba(254,194,1,1) 0%, rgba(254,151,0,0.9164040616246498) 100%);
+}
+
+input[value="sign in"] {
+    border: 2px solid white;
+    background-color: var(--bg-color);
+    color: white;
+    width: 40%;
+}
