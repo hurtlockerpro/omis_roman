@@ -85,60 +85,143 @@
 
 
     <header>
-        <div class="top-row d-flex justify-content-between ps-2 pe-2 ps-md-5 pe-md-5">
 
-            <div>Latest news | <a href="http://">Latest news Latest news Latest news</a></div>
-            <div class="social">
-                <i class="fa-brands fa-facebook-f"></i>
-                <i class="fa-brands fa-x-twitter"></i>
+      <div class="top-row">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-between">
+
+                  <div id="latest-news"><span>Latest news</span> | <a href="http://">Latest news Latest news Latest news</a></div>
+                  <div class="social d-flex">
+                      <i class="fa-brands fa-facebook-f d-flex justify-content-center align-items-center"></i>
+                      <i class="fa-brands fa-x-twitter d-flex justify-content-center align-items-center"></i>
+                  </div>
+      
+                </div>
             </div>
-
+          </div>
         </div>
-        <div class="logo-row ps-2 pe-2 ps-md-5 pe-md-5"><img src="./img/tallinn-logo.png" alt="" width="20%"></div>
+      </div>
         
-        <nav class="navbar navbar-expand-lg bg-body-tertiary ps-2 pe-2 ps-md-5 pe-md-5">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#"></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+      <div class="container d-none d-sm-block">
+        <div class="row">
+          <div class="col">
+            <div class="logo-row"><img src="./img/tallinn-logo.png" alt="" width="20%"></div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="bg-body-tertiary">
+
+        <div class="container">
+          <div class="row">
+            <div class="col">
+
+              <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid p-0 m-0">
+                  <a class="navbar-brand p-0 m-0" href="#"><img src="./img/tallinn-logo-small.png" alt="" class="d-sm-none"></a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                      </li>
                     </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                  </li>
-                </ul>
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-              </div>
+                    <form class="d-flex" role="search">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                  </div>
+                </div>
+              </nav>
+
             </div>
-          </nav>
+          </div>
+        </div>
+      
+      </div>
+        
     </header>
 
-    <section class="container">
+    <section class="container mt-4">
         <div class="row">
-            <div class="col">col 1</div>
-            <div class="col">col 2</div>
-            <div class="col">col 3</div>
+            <div class="col-12 col-sm-6">
+              
+              <div class="card text-bg-dark">
+                <img src="https://picsum.photos/id/154/600/600" class="card-img" alt="News photo">
+                <div class="card-img-overlay">
+                  <span class="badge text-bg-danger">Political</span>
+                  <h4 class="card-title">This is a wider card with supporting text below as a natural</h4>
+                  <p class="card-text d-flex justify-content-between">
+                    <span>Vladimir, Roman</span>
+                    <small>28.10.2023 | 3 mins read</small>
+                  </p>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-12 col-sm-3 mt-2 mt-sm-0" id="second-column">
+  
+              <div class="card">
+                <img src="https://picsum.photos/id/35/300/200" class="card-img-top" alt="First news image">
+                <div class="card-body">
+                  <h4 class="card-text">Some quick example text to build on the card </h4>
+                </div>
+              </div>
+
+              <div class="card">
+                <img src="https://picsum.photos/id/50/300/200" class="card-img-top" alt="Second news image">
+                <div class="card-body">
+                  <h4 class="card-text">Some quick example text to build on the card title</h4>
+                </div>
+              </div>
+
+            </div>
+            <div class="d-none d-sm-block col-sm-3" id="third-column">
+
+              <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                  <div class="w-100">
+                    <h5 class="mb-1">List group item heading</h5>
+                    <small class="text-body-secondary">3 days ago</small>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div class="w-100">
+                    <h5 class="mb-1">List group item heading</h5>
+                    <small class="text-body-secondary">3 days ago</small>
+                  </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div class="w-100">
+                    <h5 class="mb-1">List group item heading</h5>
+                    <small class="text-body-secondary">3 days ago</small>
+                  </div>
+                </a>
+              </div>
+
+            </div>
         </div>
     </section>
 
