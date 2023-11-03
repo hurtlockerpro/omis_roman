@@ -94,3 +94,27 @@
 #third-column .list-group-item:last-child {
     border: 0;
 }
+
+/* FOOTER LINKS */
+.email, .phone {
+    color: var(--dark-gray-color);
+    text-decoration: none;
+}
+.email::before, .phone::before 
+{
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.email::before
+{
+    content: "\f2b6";
+}
+.phone::before{
+    content: "\f879";
+}
+
+.email:hover, .phone:hover {
+    text-decoration: underline;
+}
