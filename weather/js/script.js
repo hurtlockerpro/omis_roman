@@ -53,29 +53,24 @@ class JSON {
 
     data = ''
 
-    constructor(url) {
+    constructor() {
         //this.#getData(url)
-        this.data = ''
+        /*
+        this.data = this.getData(url).then(response => {
+            return response
+        })*/
     }
 
-    getData(url){
+    async getData(url){
 
-        fetch(url).then(response => {
-
-            return response.json()
-        }).then(response => {
-            this.data = response
-            console.log(response);
-        })
-        
-        
-
+        const response = await fetch(url)
+        return await response.json()
     }
 
-    getWeather(rowSeparator = ''){
+    async getWeather(rowSeparator = ''){
 
         let weatherDescription = ''
-        this.data.weather.forEach(element => {
+        await this.data.weather.forEach(element => {
             weatherDescription += element.main + '(' + element.description + ') ' + rowSeparator 
         });
         return weatherDescription
@@ -95,7 +90,7 @@ class JSON {
 
 let con = new Connection()
 let json = new JSON()
-json.getData(con.generateApiUrl())
-//json.getWeather()
+json.data = json.getData(con.generateApiUrl());
+json.getWeather()
 //json.getTemp()
 //json.getCity()
