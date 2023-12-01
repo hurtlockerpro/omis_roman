@@ -62,16 +62,18 @@ class JSON {
     }
 
     async getData(url){
-
         const response = await fetch(url)
-        return await response.json()
+        const weatherData = await response.json()
+        return weatherData
     }
 
-    async getWeather(rowSeparator = ''){
+    async getWeather(url, rowSeparator = ''){
 
+        this.data = await this.getData(url)
         let weatherDescription = ''
         await this.data.weather.forEach(element => {
             weatherDescription += element.main + '(' + element.description + ') ' + rowSeparator 
+            console.log(weatherDescription);
         });
         return weatherDescription
     }
@@ -90,7 +92,7 @@ class JSON {
 
 let con = new Connection()
 let json = new JSON()
-json.data = json.getData(con.generateApiUrl());
-json.getWeather()
+//json.data = json.getData();
+json.getWeather(con.generateApiUrl())
 //json.getTemp()
 //json.getCity()
