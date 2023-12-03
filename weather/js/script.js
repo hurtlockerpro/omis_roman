@@ -52,47 +52,140 @@ class Connection {
 class JSON {
 
     data = ''
+    url = ''
+    icon = 'http://openweathermap.org/img/w/{icon_name}.png'
 
-    constructor() {
-        //this.#getData(url)
-        /*
-        this.data = this.getData(url).then(response => {
-            return response
-        })*/
+    constructor(url) {      
+        this.url = url
+        console.log(url);
     }
 
-    async getData(url){
-        const response = await fetch(url)
-        const weatherData = await response.json()
+    async getData(){
+
+        const response = await fetch(this.url) // Promise
+        const weatherData = await response.json() // -> then()
         return weatherData
+
+        // fetch().then().then()
     }
 
-    async getWeather(url, rowSeparator = ''){
+    async getWeather(rowSeparator = ''){
 
-        this.data = await this.getData(url)
+        this.data = await this.getData(this.url)
         let weatherDescription = ''
         await this.data.weather.forEach(element => {
-            weatherDescription += element.main + '(' + element.description + ') ' + rowSeparator 
-            console.log(weatherDescription);
+            weatherDescription += element.main + ' (' + element.description + ') ' + rowSeparator 
         });
         return weatherDescription
     }
 
-    getTemp(){
+    async getTemp(){
+        this.data = await this.getData(this.url)
         return this.data.main.temp
     }
 
 
-    getCity(){
+    async getCity(){
+        this.data = await this.getData(this.url)
         return this.data.name
     }
 
+    async getIcon() {
+        this.data = await this.getData(this.url)
+        return this.icon.replace('{icon_name}', this.data.weather[0].icon)
+    }
 }
 
 
 let con = new Connection()
-let json = new JSON()
-//json.data = json.getData();
-json.getWeather(con.generateApiUrl())
-//json.getTemp()
-//json.getCity()
+let json = new JSON(con.generateApiUrl())
+
+json.getWeather().then(weatherData => {
+    let divWeatherDescription = document.getElementsByClassName('card-text')
+    if (divWeatherDescription.length != 0 && divWeatherDescription !== undefined)
+    {
+        console.log('weatherData: ', weatherData)
+        divWeatherDescription[0].innerText = weatherData
+    } else {
+        //console.log(new Error('No div (html) found'));
+        throw new Error('No div (html) found')
+    }
+    
+})
+
+json.getTemp().then(weatherTemp => {
+    let divWeatherTemp = document.getElementById('temp')
+    if (divWeatherTemp.length != 0 && divWeatherTemp !== undefined)
+    {
+        console.log('weatherTemp: ', weatherTemp)
+        divWeatherTemp.innerText = weatherTemp
+    } else {
+        //console.log(new Error('No div (html) found'));
+        throw new Error('No div (html) found')
+    }
+    //console.log('temp: ' , weatherData );
+})
+
+json.getCity().then(cityData => {
+    let divCity = document.getElementsByClassName('card-title')
+    if (divCity.length != 0 && divCity !== undefined)
+    {
+        divCity[0].innerText = cityData
+    } else {
+        //console.log(new Error('No div (html) found'));
+        throw new Error('No div (html) found')
+    }
+    console.log('cityData: ' , cityData );
+})
+
+
+json.getIcon().then(iconData => {
+    let divIcon = document.getElementsByClassName('card-img-top')
+    if (divIcon.length != 0 && divIcon !== undefined)
+    {
+        divIcon[0].src = iconData
+        divIcon[0].alt= 'My weather'
+
+    } else {
+        //console.log(new Error('No div (html) found'));
+        throw new Error('No div (html) found')
+    }
+    console.log('divIcon: ' , divIcon );
+})
+
+
+/* SWITCH BUTTON */
+
+let switchButton = document.getElementById('flexSwitchCheckDefault')
+switchButton.addEventListener('change', event => {
+
+    let con = new Connection()
+    let divText = document.querySelector('label[for="flexSwitchCheckDefault"]')
+    
+    if (switchButton.checked){
+        //console.log('checked');
+        console.log(event.target.checked);
+        con.addNewOption('units', 'metric') // imperial
+        
+        divText.innerText = 'Change to Fahrenheit'
+    } else {
+        console.log('unchecked');
+        con.addNewOption('units', 'standart') // 
+        divText.innerText = 'Change to Celcious'
+    }
+
+    let json = new JSON(con.generateApiUrl())
+    json.getTemp().then(weatherTemp => {
+        let divWeatherTemp = document.getElementById('temp')
+        if (divWeatherTemp.length != 0 && divWeatherTemp !== undefined)
+        {
+            console.log('weatherTemp: ', weatherTemp)
+            divWeatherTemp.innerText = weatherTemp
+        } else {
+            //console.log(new Error('No div (html) found'));
+            throw new Error('No div (html) found')
+        }
+    })
+    
+
+})
